@@ -12,8 +12,8 @@ test_folds = [1, 2, 3, 4, 5]
 val_size = .2  # could be changed
 
 
-model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"
-# model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"
+# model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"
+model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"
 
 # model checkpoints loaded for testing
 test_checkpoints = ['terminal.pt']  # ['terminal.pt', 'best_val_loss.pt']
@@ -26,7 +26,7 @@ sr = 44100
 
 device_id = 0
 batch_size = 32
-num_workers = 4
+num_workers = 2
 persistent_workers = True
 epochs = 200
 patience = 20
