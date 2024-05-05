@@ -1,8 +1,9 @@
 import torch.nn as nn
+import config
 
 
 class ResNet(nn.Module):
-    def __init__(self, block, layers, num_classes=50, dropout_rate=0.5):
+    def __init__(self, block, layers, num_classes=50, dropout_rate=config.dropout_rate):
         super(ResNet, self).__init__()
         self.inplanes = 64
         self.conv1 = nn.Sequential(
@@ -22,7 +23,7 @@ class ResNet(nn.Module):
             nn.Linear(512 * block.expansion, num_classes)   # account for block expansion
         )
 
-    def _make_layer(self, block, planes, blocks, stride=1, dropout_rate=0.5):
+    def _make_layer(self, block, planes, blocks, stride=1, dropout_rate=config.dropout_rate):
         downsample = None
         if stride != 1 or self.inplanes != planes * block.expansion:  # account for block expansion
             downsample = nn.Sequential(
@@ -55,7 +56,7 @@ class ResNet(nn.Module):
 class ResidualBlock(nn.Module):
     expansion = 1
 
-    def __init__(self, in_channels, out_channels, stride=1, downsample=None, dropout_rate=0.5):
+    def __init__(self, in_channels, out_channels, stride=1, downsample=None, dropout_rate=config.dropout_rate):
         super(ResidualBlock, self).__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1),
@@ -86,7 +87,7 @@ class ResidualBlock(nn.Module):
 class Bottleneck(nn.Module):
     expansion = 4
 
-    def __init__(self, in_channels, out_channels, stride=1, downsample=None, dropout_rate=0.5):
+    def __init__(self, in_channels, out_channels, stride=1, downsample=None, dropout_rate=config.dropout_rate):
         super(Bottleneck, self).__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=1, padding=0),
@@ -120,5 +121,5 @@ class Bottleneck(nn.Module):
         return out
 
 
-def ResNet50(num_classes=50, dropout_rate=0.5):
+def ResNet50(num_classes=50, dropout_rate=config.dropout_rate):
     return ResNet(Bottleneck, [3, 4, 6, 3], num_classes=num_classes, dropout_rate=dropout_rate)
