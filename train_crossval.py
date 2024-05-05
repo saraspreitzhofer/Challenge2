@@ -11,6 +11,7 @@ import sys
 from functools import partial
 
 from models.model_classifier import ResNet, ResidualBlock
+from models.cnn import CNN
 from models.utils import EarlyStopping, Tee
 from dataset.dataset_ESC50 import ESC50
 import config
@@ -185,10 +186,11 @@ if __name__ == "__main__":
             # Define a loss function and optimizer
             criterion = nn.CrossEntropyLoss().to(device)
 
-            optimizer = torch.optim.SGD(model.parameters(),
+            """optimizer = torch.optim.SGD(model.parameters(),
                                         lr=config.lr,
                                         momentum=0.9,
-                                        weight_decay=config.weight_decay)
+                                        weight_decay=config.weight_decay)"""
+            optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)  # CNN
 
             scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
                                                         step_size=config.step_size,

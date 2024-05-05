@@ -12,14 +12,18 @@ test_folds = [1, 2, 3, 4, 5]
 val_size = .2  # could be changed
 
 
-# model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"
-model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"
+#model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"
+#model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"
+model_constructor = "CNN()"
 
 # model checkpoints loaded for testing
-test_checkpoints = ['terminal.pt']  # ['terminal.pt', 'best_val_loss.pt']
+#test_checkpoints = ['terminal.pt']
+#test_checkpoints = ['best_val_loss.pt']
+test_checkpoints = ['terminal.pt', 'best_val_loss.pt']
+
 # experiment folder used for testing (result from cross validation training)
-#test_experiment = 'results/2024-04-01-00-00'
-test_experiment = 'results/sample-run'
+#test_experiment = 'results/sample-run'
+#test_experiment = 'results/2024-05-01-16-09'
 
 # sampling rate for waves
 sr = 44100
