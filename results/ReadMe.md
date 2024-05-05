@@ -31,8 +31,7 @@ std        0.025    0.057            0.030    0.053
   * 10%|#         | 21/200 [20:31<2:54:56, 58.64s/ep] TrnAcc=0.034 ValAcc=0.031 TrnLoss=3.911 ValLoss=3.915
   * 14%|#3        | 27/200 [26:54<2:56:47, 61.31s/ep] TrnAcc=0.016 ValAcc=0.016 TrnLoss=3.929 ValLoss=3.930 
   * 11%|#1        | 22/200 [21:37<2:55:00, 58.99s/ep] TrnAcc=0.037 ValAcc=0.013 TrnLoss=3.908 ValLoss=3.933 
-  * 10%|#         | 21/200 [20:37<2:55:44, 58.91s/ep] TrnAcc=0.037 ValAcc=0.034 TrnLoss=3.909 ValLoss=3.911 
-terminal.pt
+  * 10%|#         | 21/200 [20:37<2:55:44, 58.91s/ep] TrnAcc=0.037 ValAcc=0.034 TrnLoss=3.909 ValLoss=3.911
     TestAcc  TestLoss
 1       0.060     3.886
 2       0.030     3.917
@@ -41,3 +40,23 @@ terminal.pt
 5       0.045     3.898
 mean    0.037     3.908
 std     0.018     0.018
+
+## 2024-05-05-17-27
+* ResNet50()
+* num_workers = 2
+* dropout_rate = 0.5
+* gamma = 0.8
+* Early stopping 
+  * 20%|##        | 41/200 [42:15<2:43:51, 61.83s/ep] TrnAcc=0.742 ValAcc=0.244 TrnLoss=0.830 ValLoss=3.889
+  * 12%|#1        | 23/200 [24:12<3:09:29, 64.23s/ep] TrnAcc=0.329 ValAcc=0.041 TrnLoss=2.161 ValLoss=7.965
+  * 12%|#2        | 24/200 [24:55<3:02:48, 62.32s/ep] TrnAcc=0.534 ValAcc=0.062 TrnLoss=1.504 ValLoss=9.457
+  * 18%|#7        | 35/200 [35:21<2:46:39, 60.60s/ep] TrnAcc=0.578 ValAcc=0.131 TrnLoss=1.351 ValLoss=5.212 
+  * 12%|#1        | 23/200 [23:23<2:59:57, 61.00s/ep] TrnAcc=0.540 ValAcc=0.084 TrnLoss=1.522 ValLoss=6.788 
+      TestAcc  TestLoss
+1       0.190     4.171
+2       0.040     8.060
+3       0.020    10.118
+4       0.092     5.393
+5       0.083     6.929
+mean    0.085     6.934
+std     0.066     2.314 
