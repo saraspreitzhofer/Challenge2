@@ -14,7 +14,9 @@ val_size = .2  # could be changed
 
 #model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"
 #model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"
-model_constructor = "CNN()"
+#model_constructor = "CNN()"
+#model_constructor = "SeparableTr(channels=1, input_size=(128, 128), num_classes=config.n_classes, depth=3, heads=5, mlp_dim=256, dim_head=256, down_sample_input=(2, 2), dim=256)"
+model_constructor = "ResNet50()"
 
 # model checkpoints loaded for testing
 #test_checkpoints = ['terminal.pt']
@@ -24,6 +26,7 @@ test_checkpoints = ['terminal.pt', 'best_val_loss.pt']
 # experiment folder used for testing (result from cross validation training)
 #test_experiment = 'results/sample-run'
 #test_experiment = 'results/2024-05-01-16-09'
+test_experiment = 'results/2024-05-05-13-16'
 
 # sampling rate for waves
 sr = 44100
