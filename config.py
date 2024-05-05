@@ -40,6 +40,6 @@ patience = 20
 lr = 1e-3
 weight_decay = 1e-3
 warm_epochs = 10
-gamma = 0.8
+gamma = 0.2
 step_size = 5
 dropout_rate = 0.2
