@@ -39,10 +39,10 @@ class CNN(nn.Module):
         )
         self.connected_layer = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(64 * 4 * 43, 200),
+            nn.Linear(64 * 21 * 97, 200),
             nn.Dropout(0.25),
             nn.Linear(200, 50),  # 200 unit
-            nn.Softmax()
+            nn.Softmax(dim=1)
         )
 
     def forward(self, input_data):
