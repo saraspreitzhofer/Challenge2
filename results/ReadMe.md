@@ -60,3 +60,23 @@ std     0.018     0.018
 5       0.083     6.929
 mean    0.085     6.934
 std     0.066     2.314 
+
+## ResNet50 - not saved
+* ResNet50()
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.2
+* Early stopping 
+  * 16%|#6        | 32/200 [32:04<2:43:08, 58.26s/ep] TrnAcc=0.592 ValAcc=0.259 TrnLoss=1.351 ValLoss=2.928
+  * 19%|#9        | 38/200 [38:06<2:42:54, 60.34s/ep] TrnAcc=0.620 ValAcc=0.284 TrnLoss=1.289 ValLoss=2.825 
+  * 15%|#5        | 30/200 [31:15<2:56:52, 62.43s/ep] TrnAcc=0.573 ValAcc=0.184 TrnLoss=1.473 ValLoss=3.881
+  * 16%|#5        | 31/200 [31:29<2:48:42, 59.89s/ep] TrnAcc=0.585 ValAcc=0.278 TrnLoss=1.404 ValLoss=3.084
+  * 14%|#4        | 28/200 [28:10<2:45:31, 57.74s/ep] TrnAcc=0.574 ValAcc=0.163 TrnLoss=1.423 ValLoss=4.026
+      TestAcc  TestLoss
+1       0.253     3.247
+2       0.302     2.907
+3       0.168     3.897
+4       0.242     3.208
+5       0.140     4.307
+mean    0.221     3.513
+std     0.066     0.572
