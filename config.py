@@ -16,7 +16,8 @@ val_size = .2  # could be changed
 #model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"
 #model_constructor = "CNN()"
 #model_constructor = "SeparableTr(channels=1, input_size=(128, 128), num_classes=config.n_classes, depth=3, heads=5, mlp_dim=256, dim_head=256, down_sample_input=(2, 2), dim=256)"
-model_constructor = "ResNet50()"
+#model_constructor = "ResNet50()"
+model_constructor = "ResNet18()"
 
 # model checkpoints loaded for testing
 #test_checkpoints = ['terminal.pt']

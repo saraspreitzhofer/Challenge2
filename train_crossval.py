@@ -14,6 +14,7 @@ from models.model_classifier import ResNet, ResidualBlock
 from models.cnn import CNN
 from models.seperable_transformer import SeparableTr
 from models.res_net_50 import ResNet50
+from models.res_net_18 import ResNet18
 from models.utils import EarlyStopping, Tee
 from dataset.dataset_ESC50 import ESC50
 import config
