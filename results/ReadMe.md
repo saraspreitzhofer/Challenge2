@@ -1,7 +1,7 @@
 Model training / testing results will be saved  in this folder.
 
 ## sample-run ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)
-          terminal.pt         
+terminal.pt         
           TestAcc TestLoss
 1          0.685    1.155
 2          0.665    1.173
@@ -104,3 +104,23 @@ std     0.066     0.572
 5          0.618    1.417            0.615    1.415
 mean       0.625    1.342            0.621    1.339
 std        0.043    0.179            0.041    0.179
+
+## ResNet18() with RandomScale, RandomNoise, FrequencyMask, TimeMask
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.2
+* Early stopping
+  * 30%|##4     | 60/200 [1:16:05<2:58:57, 76.69s/ep] TrnAcc=0.587 ValAcc=0.600 TrnLoss=1.404 ValLoss=1.527
+  * 24%|#9      | 48/200 [1:00:28<2:59:48, 70.98s/ep] TrnAcc=0.670 ValAcc=0.641 TrnLoss=1.192 ValLoss=1.270 
+  * 21%|##1     | 42/200 [52:06<3:17:07, 74.86s/ep] TrnAcc=0.708 ValAcc=0.622 TrnLoss=1.087 ValLoss=1.351
+  * 24%|#9      | 49/200 [1:00:06<3:04:41, 73.39s/ep] TrnAcc=0.682 ValAcc=0.641 TrnLoss=1.144 ValLoss=1.378
+  * 20%|##      | 41/200 [52:09<3:24:03, 77.00s/ep] TrnAcc=0.691 ValAcc=0.628 TrnLoss=1.115 ValLoss=1.331
+         terminal.pt          best_val_loss.pt         
+         TestAcc TestLoss          TestAcc TestLoss
+1          0.525    1.788            0.525    1.774
+2          0.570    1.511            0.568    1.506
+3          0.560    1.555            0.568    1.547
+4          0.618    1.308            0.618    1.301
+5          0.575    1.579            0.580    1.548
+mean       0.570    1.548            0.572    1.535
+std        0.033    0.171            0.033    0.168
