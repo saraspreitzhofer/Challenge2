@@ -1,11 +1,17 @@
 Model training / testing results will be saved  in this folder.
 
-## sample-run
-* ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)
-* TestAcc=0.703
-
-## 2024-05-01-16-09
-* ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)
+## sample-run ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)
+          terminal.pt         
+          TestAcc TestLoss
+1          0.685    1.155
+2          0.665    1.173
+3          0.688    1.166
+4          0.790    0.814
+5          0.688    1.169
+mean       0.703    1.095
+std        0.050    0.157
+* 
+## 2024-05-01-16-09 ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)
 * num_workers = 4
 * Early stopping
   * 33%|##6     | 66/200 [1:03:06<2:08:07, 57.37s/ep]
@@ -23,8 +29,7 @@ terminal.pt          best_val_loss.pt
 mean       0.646    1.346            0.650    1.337
 std        0.025    0.057            0.030    0.053
 
-## 2024-05-05-13-16
-* CNN()
+## 2024-05-05-13-16 CNN()
 * num_workers = 2
 * Early stopping 
   * 27%|##7       | 54/200 [53:05<2:23:32, 58.99s/ep] TrnAcc=0.045 ValAcc=0.034 TrnLoss=3.901 ValLoss=3.912 
@@ -41,8 +46,7 @@ std        0.025    0.057            0.030    0.053
 mean    0.037     3.908
 std     0.018     0.018
 
-## 2024-05-05-17-27
-* ResNet50()
+## 2024-05-05-17-27 ResNet50()
 * num_workers = 2
 * dropout_rate = 0.5
 * gamma = 0.8
@@ -51,18 +55,18 @@ std     0.018     0.018
   * 12%|#1        | 23/200 [24:12<3:09:29, 64.23s/ep] TrnAcc=0.329 ValAcc=0.041 TrnLoss=2.161 ValLoss=7.965
   * 12%|#2        | 24/200 [24:55<3:02:48, 62.32s/ep] TrnAcc=0.534 ValAcc=0.062 TrnLoss=1.504 ValLoss=9.457
   * 18%|#7        | 35/200 [35:21<2:46:39, 60.60s/ep] TrnAcc=0.578 ValAcc=0.131 TrnLoss=1.351 ValLoss=5.212 
-  * 12%|#1        | 23/200 [23:23<2:59:57, 61.00s/ep] TrnAcc=0.540 ValAcc=0.084 TrnLoss=1.522 ValLoss=6.788 
-      TestAcc  TestLoss
-1       0.190     4.171
-2       0.040     8.060
-3       0.020    10.118
-4       0.092     5.393
-5       0.083     6.929
-mean    0.085     6.934
-std     0.066     2.314 
+  * 12%|#1        | 23/200 [23:23<2:59:57, 61.00s/ep] TrnAcc=0.540 ValAcc=0.084 TrnLoss=1.522 ValLoss=6.788
+        terminal.pt          best_val_loss.pt         
+        TestAcc TestLoss          TestAcc TestLoss
+1          0.190    4.171            0.105    3.977
+2          0.040    8.060            0.020    4.122
+3          0.020   10.118            0.020    3.918
+4          0.092    5.393            0.138    3.367
+5          0.083    6.929            0.020    4.001
+mean       0.085    6.934            0.060    3.877
+std        0.066    2.314            0.057    0.295
 
-## ResNet50 - not saved
-* ResNet50()
+## not saved ResNet50()
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
@@ -80,3 +84,23 @@ std     0.066     2.314
 5       0.140     4.307
 mean    0.221     3.513
 std     0.066     0.572
+
+## ResNet18()
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.2
+* Early stopping 
+  * 27%|##7       | 54/200 [52:13<2:15:27, 55.66s/ep] TrnAcc=0.866 ValAcc=0.700 TrnLoss=0.610 ValLoss=1.143
+  * 28%|##8       | 57/200 [54:43<2:16:03, 57.09s/ep] TrnAcc=0.903 ValAcc=0.716 TrnLoss=0.493 ValLoss=1.033
+  * 20%|##        | 40/200 [39:17<2:37:27, 59.05s/ep] TrnAcc=0.929 ValAcc=0.716 TrnLoss=0.390 ValLoss=1.114 
+  * 26%|##6       | 53/200 [53:12<2:22:58, 58.36s/ep] TrnAcc=0.852 ValAcc=0.709 TrnLoss=0.605 ValLoss=1.085
+  * 22%|##1       | 43/200 [40:37<2:17:42, 52.63s/ep] TrnAcc=0.890 ValAcc=0.716 TrnLoss=0.537 ValLoss=1.032  
+          terminal.pt          best_val_loss.pt         
+          TestAcc TestLoss          TestAcc TestLoss
+1          0.598    1.461            0.595    1.458
+2          0.603    1.410            0.600    1.413
+3          0.608    1.394            0.603    1.389
+4          0.700    1.025            0.693    1.022
+5          0.618    1.417            0.615    1.415
+mean       0.625    1.342            0.621    1.339
+std        0.043    0.179            0.041    0.179
