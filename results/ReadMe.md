@@ -85,7 +85,7 @@ std        0.066    2.314            0.057    0.295
 mean    0.221     3.513
 std     0.066     0.572
 
-## ResNet18()
+## 2024-05-06-06-15 ResNet18()
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
@@ -104,8 +104,8 @@ std     0.066     0.572
 5          0.618    1.417            0.615    1.415
 mean       0.625    1.342            0.621    1.339
 std        0.043    0.179            0.041    0.179
-
-## ResNet18() with RandomScale, RandomNoise, FrequencyMask, TimeMask
+    
+## 2024-05-06-09-38 ResNet18() with RandomScale, RandomNoise, FrequencyMask, TimeMask
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
@@ -123,4 +123,24 @@ std        0.043    0.179            0.041    0.179
 4          0.618    1.308            0.618    1.301
 5          0.575    1.579            0.580    1.548
 mean       0.570    1.548            0.572    1.535
-std        0.033    0.171            0.033    0.168
+std        0.033    0.171            0.033    0.168 
+
+## 2024-05-06-10-47 ResNet() with RandomScale, RandomNoise, FrequencyMask, TimeMask
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.2
+* Early stopping 
+  * 24%|#9      | 49/200 [1:01:21<3:07:51, 74.65s/ep] TrnAcc=0.616 ValAcc=0.613 TrnLoss=1.368 ValLoss=1.464 
+  * 22%|##2     | 44/200 [53:00<3:10:17, 73.19s/ep] TrnAcc=0.600 ValAcc=0.600 TrnLoss=1.390 ValLoss=1.521 
+  * 26%|##1     | 53/200 [1:04:00<2:57:42, 72.53s/ep] TrnAcc=0.670 ValAcc=0.575 TrnLoss=1.213 ValLoss=1.592 
+  * 26%|##      | 51/200 [1:04:22<3:04:06, 74.13s/ep] TrnAcc=0.623 ValAcc=0.588 TrnLoss=1.309 ValLoss=1.444
+  * 32%|##6     | 65/200 [1:22:40<2:53:01, 76.90s/ep] TrnAcc=0.673 ValAcc=0.637 TrnLoss=1.142 ValLoss=1.340
+           terminal.pt          best_val_loss.pt         
+           TestAcc TestLoss          TestAcc TestLoss
+1          0.522    1.857            0.527    1.854
+2          0.502    1.832            0.505    1.839
+3          0.477    1.826            0.490    1.782
+4          0.590    1.360            0.600    1.364
+5          0.542    1.634            0.555    1.622
+mean       0.527    1.702            0.536    1.692
+std        0.043    0.211            0.044    0.205
