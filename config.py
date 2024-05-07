@@ -27,11 +27,7 @@ test_checkpoints = ['terminal.pt', 'best_val_loss.pt']
 
 # experiment folder used for testing (result from cross validation training)
 #test_experiment = 'results/sample-run'
-#test_experiment = 'results/2024-05-01-16-09'
-#test_experiment = 'results/2024-05-05-13-16'
-#test_experiment = 'results/2024-05-05-17-27'
-#test_experiment = 'results/2024-05-06-06-15'
-test_experiment = 'results/2024-05-06-09-38'
+test_experiment = 'results/2024-05-06-16-33'
 
 # sampling rate for waves
 sr = 44100

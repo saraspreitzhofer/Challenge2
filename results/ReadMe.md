@@ -12,7 +12,8 @@ mean       0.703    1.095
 std        0.050    0.157
 * 
 ## 2024-05-01-16-09 ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)
-* num_workers = 4
+* num_workers = 4 
+* optimizer = torch.optim.SGD(model.parameters(), lr=config.lr, momentum=0.9, weight_decay=config.weight_decay)
 * Early stopping
   * 33%|##6     | 66/200 [1:03:06<2:08:07, 57.37s/ep]
   * 24%|##4       | 48/200 [46:06<2:25:59, 57.63s/ep]
@@ -31,6 +32,7 @@ std        0.025    0.057            0.030    0.053
 
 ## 2024-05-05-13-16 CNN()
 * num_workers = 2
+* optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
 * Early stopping 
   * 27%|##7       | 54/200 [53:05<2:23:32, 58.99s/ep] TrnAcc=0.045 ValAcc=0.034 TrnLoss=3.901 ValLoss=3.912 
   * 10%|#         | 21/200 [20:31<2:54:56, 58.64s/ep] TrnAcc=0.034 ValAcc=0.031 TrnLoss=3.911 ValLoss=3.915
@@ -50,6 +52,7 @@ std     0.018     0.018
 * num_workers = 2
 * dropout_rate = 0.5
 * gamma = 0.8
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping 
   * 20%|##        | 41/200 [42:15<2:43:51, 61.83s/ep] TrnAcc=0.742 ValAcc=0.244 TrnLoss=0.830 ValLoss=3.889
   * 12%|#1        | 23/200 [24:12<3:09:29, 64.23s/ep] TrnAcc=0.329 ValAcc=0.041 TrnLoss=2.161 ValLoss=7.965
@@ -70,6 +73,7 @@ std        0.066    2.314            0.057    0.295
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping 
   * 16%|#6        | 32/200 [32:04<2:43:08, 58.26s/ep] TrnAcc=0.592 ValAcc=0.259 TrnLoss=1.351 ValLoss=2.928
   * 19%|#9        | 38/200 [38:06<2:42:54, 60.34s/ep] TrnAcc=0.620 ValAcc=0.284 TrnLoss=1.289 ValLoss=2.825 
@@ -89,6 +93,7 @@ std     0.066     0.572
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping 
   * 27%|##7       | 54/200 [52:13<2:15:27, 55.66s/ep] TrnAcc=0.866 ValAcc=0.700 TrnLoss=0.610 ValLoss=1.143
   * 28%|##8       | 57/200 [54:43<2:16:03, 57.09s/ep] TrnAcc=0.903 ValAcc=0.716 TrnLoss=0.493 ValLoss=1.033
@@ -109,6 +114,7 @@ std        0.043    0.179            0.041    0.179
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping
   * 30%|##4     | 60/200 [1:16:05<2:58:57, 76.69s/ep] TrnAcc=0.587 ValAcc=0.600 TrnLoss=1.404 ValLoss=1.527
   * 24%|#9      | 48/200 [1:00:28<2:59:48, 70.98s/ep] TrnAcc=0.670 ValAcc=0.641 TrnLoss=1.192 ValLoss=1.270 
@@ -129,6 +135,7 @@ std        0.033    0.171            0.033    0.168
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping 
   * 24%|#9      | 49/200 [1:01:21<3:07:51, 74.65s/ep] TrnAcc=0.616 ValAcc=0.613 TrnLoss=1.368 ValLoss=1.464 
   * 22%|##2     | 44/200 [53:00<3:10:17, 73.19s/ep] TrnAcc=0.600 ValAcc=0.600 TrnLoss=1.390 ValLoss=1.521 
@@ -145,7 +152,7 @@ std        0.033    0.171            0.033    0.168
 mean       0.527    1.702            0.536    1.692
 std        0.043    0.211            0.044    0.205
 
-##  2024-05-06-15-04 ResNet18() with reduced parameters for RandomNoise, FrequencyMask, TimeMask 
+## 2024-05-06-15-04 ResNet18() with reduced parameters for RandomNoise, FrequencyMask, TimeMask 
 * num_workers = 2
 * dropout_rate = 0.2
 * gamma = 0.2
@@ -156,8 +163,8 @@ std        0.043    0.211            0.044    0.205
   * 23%|##3       | 46/200 [56:57<3:10:34, 74.25s/ep] TrnAcc=0.752 ValAcc=0.641 TrnLoss=0.919 ValLoss=1.167
   * 22%|##2       | 45/200 [55:19<3:18:08, 76.70s/ep] TrnAcc=0.698 ValAcc=0.628 TrnLoss=1.095 ValLoss=1.320 
   * 24%|##3       | 47/200 [57:03<2:58:17, 69.92s/ep] TrnAcc=0.725 ValAcc=0.669 TrnLoss=0.964 ValLoss=1.198
-terminal.pt          best_val_loss.pt         
-         TestAcc TestLoss          TestAcc TestLoss
+           terminal.pt               best_val_loss.pt         
+           TestAcc TestLoss          TestAcc TestLoss
 1          0.568    1.547            0.562    1.538
 2          0.588    1.528            0.593    1.528
 3          0.593    1.406            0.605    1.370
@@ -165,3 +172,24 @@ terminal.pt          best_val_loss.pt
 5          0.603    1.539            0.603    1.531
 mean       0.599    1.444            0.603    1.433
 std        0.028    0.149            0.032    0.149
+
+## 2024-05-06-16-33 ResNetDropout(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.2
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
+* Early stopping 
+  * 28%|##2     | 55/200 [1:11:11<3:07:30, 77.59s/ep] TrnAcc=0.568 ValAcc=0.625 TrnLoss=1.463 ValLoss=1.449
+  * 25%|##      | 50/200 [1:05:33<3:17:04, 78.83s/ep] TrnAcc=0.601 ValAcc=0.653 TrnLoss=1.286 ValLoss=1.233
+  * 23%|##3       | 46/200 [57:00<3:09:48, 73.95s/ep] TrnAcc=0.558 ValAcc=0.550 TrnLoss=1.486 ValLoss=1.645
+  * 23%|##3       | 46/200 [55:55<3:10:52, 74.37s/ep] TrnAcc=0.548 ValAcc=0.597 TrnLoss=1.532 ValLoss=1.523
+  * 22%|##2       | 45/200 [56:07<3:07:06, 72.43s/ep] TrnAcc=0.616 ValAcc=0.641 TrnLoss=1.340 ValLoss=1.364
+           terminal.pt               best_val_loss.pt
+           TestAcc TestLoss          TestAcc TestLoss
+1          0.520    1.791            0.525    1.792
+2          0.570    1.475            0.583    1.476
+3          0.482    1.746            0.485    1.759
+4          0.575    1.456            0.575    1.460
+5          0.555    1.569            0.570    1.556
+mean       0.540    1.608            0.547    1.609
+std        0.039    0.154            0.042    0.157
