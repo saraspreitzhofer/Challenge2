@@ -7,7 +7,7 @@ disable_bat_pbar = False#True
 # do not change this block
 n_classes = 50
 folds = 5
-test_folds = [4, 5]
+test_folds = [1, 2, 3, 4, 5]
 # ratio to split off from training data
 val_size = .2  # could be changed
 
@@ -27,7 +27,7 @@ test_checkpoints = ['terminal.pt', 'best_val_loss.pt']
 
 # experiment folder used for testing (result from cross validation training)
 #test_experiment = 'results/sample-run'
-test_experiment = 'results/2024-05-06-16-33'
+test_experiment = 'results/2024-05-08-08-27'
 
 # sampling rate for waves
 sr = 44100
