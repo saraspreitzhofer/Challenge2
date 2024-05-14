@@ -91,7 +91,6 @@ std     0.066     0.572
 
 ## 2024-05-06-06-15 ResNet18()
 * num_workers = 2
-* dropout_rate = 0.2
 * gamma = 0.2
 * optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping (20)
@@ -112,7 +111,6 @@ std        0.043    0.179            0.041    0.179
     
 ## 2024-05-06-09-38 ResNet18() with RandomScale, RandomNoise, FrequencyMask, TimeMask
 * num_workers = 2
-* dropout_rate = 0.2
 * gamma = 0.2
 * optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping (20)
@@ -133,7 +131,6 @@ std        0.033    0.171            0.033    0.168
 
 ## 2024-05-06-10-47 ResNet() with RandomScale, RandomNoise, FrequencyMask, TimeMask
 * num_workers = 2
-* dropout_rate = 0.2
 * gamma = 0.2
 * optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping (20)
@@ -154,7 +151,6 @@ std        0.043    0.211            0.044    0.205
 
 ## 2024-05-06-15-04 ResNet18() with reduced parameters for RandomNoise, FrequencyMask, TimeMask 
 * num_workers = 2
-* dropout_rate = 0.2
 * gamma = 0.2
 * optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping (20)
@@ -194,9 +190,8 @@ std        0.028    0.149            0.032    0.149
 mean       0.540    1.608            0.547    1.609
 std        0.039    0.154            0.042    0.157
 
-## 2024-05-06-16-33 ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask
+## 2024-05-08-08-27 ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask
 * num_workers = 2
-* dropout_rate = 0.2
 * gamma = 0.9
 * optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
 * Early stopping (30)
@@ -214,3 +209,24 @@ std        0.039    0.154            0.042    0.157
 5          0.745    1.042            0.750    0.973
 mean       0.784    0.955            0.775    0.944
 std        0.039    0.160            0.033    0.178
+
+## 2024-05-09-07-58 ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask & Dropout
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.9
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
+* Early stopping (30)
+  * 53%|###7   | 106/200 [2:09:53<1:53:54, 72.71s/ep] TrnAcc=0.998 ValAcc=0.853 TrnLoss=0.013 ValLoss=0.573
+  * 64%|####4  | 127/200 [2:37:25<1:27:57, 72.30s/ep] TrnAcc=0.998 ValAcc=0.825 TrnLoss=0.010 ValLoss=0.758
+  * 45%|###6    | 90/200 [1:49:35<2:19:47, 76.25s/ep] TrnAcc=0.996 ValAcc=0.819 TrnLoss=0.021 ValLoss=0.724
+  * 84%|#######5 | 167/200 [3:24:57<38:28, 69.96s/ep] TrnAcc=1.000 ValAcc=0.822 TrnLoss=0.006 ValLoss=0.704
+  * 57%|###9   | 114/200 [2:21:06<1:49:26, 76.36s/ep] TrnAcc=0.999 ValAcc=0.856 TrnLoss=0.007 ValLoss=0.627 
+           terminal.pt               best_val_loss.pt         
+           TestAcc TestLoss          TestAcc TestLoss
+1          0.772    1.010            0.740    1.010
+2          0.780    1.019            0.790    0.939
+3          0.777    1.072            0.740    1.143
+4          0.873    0.513            0.845    0.595
+5          0.772    1.085            0.770    1.027
+mean       0.795    0.940            0.777    0.943
+std        0.043    0.241            0.044    0.208
