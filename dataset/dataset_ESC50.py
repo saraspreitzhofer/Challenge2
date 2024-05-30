@@ -78,7 +78,6 @@ class ESC50(data.Dataset):
         test_files = [f for f in temp if int(f.split('-')[0]) in test_folds]
         # sanity check
         assert set(temp) == (set(train_files) | set(test_files))
-        val_files = []
         if subset == "test":
             self.file_names = test_files
         else:

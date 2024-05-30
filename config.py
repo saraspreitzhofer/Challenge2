@@ -9,7 +9,7 @@ n_classes = 50
 folds = 5
 test_folds = [1, 2, 3, 4, 5]
 # ratio to split off from training data
-val_size = 0  # could be changed
+val_size = .02  # could be changed
 
 model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"    # ResNet18
 #model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"   # ResNet34
@@ -36,10 +36,10 @@ batch_size = 32
 num_workers = 2
 persistent_workers = True
 epochs = 200
-patience = 40
+patience = 200
 lr = 1e-3
 weight_decay = 1e-3
 warm_epochs = 10
-gamma = 0.9
+gamma = 0.95
 step_size = 5
 dropout_rate = 0.2
