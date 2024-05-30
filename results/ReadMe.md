@@ -230,3 +230,67 @@ std        0.039    0.160            0.033    0.178
 5          0.772    1.085            0.770    1.027
 mean       0.795    0.940            0.777    0.943
 std        0.043    0.241            0.044    0.208
+
+## 2024-05-27-22-39 ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask & Dropout
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.9
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
+* Early stopping (30)
+  * 78%|#####4 | 155/200 [3:26:53<1:01:44, 82.33s/ep] TrnAcc=1.000 ValAcc=0.856 TrnLoss=0.005 ValLoss=0.597
+  * 50%|###5   | 101/200 [2:16:02<2:11:52, 79.93s/ep] TrnAcc=0.998 ValAcc=0.809 TrnLoss=0.017 ValLoss=0.775 
+  * 46%|###6    | 91/200 [2:04:07<2:28:45, 81.89s/ep] TrnAcc=0.997 ValAcc=0.831 TrnLoss=0.018 ValLoss=0.677 
+  * 66%|####5  | 131/200 [2:51:36<1:29:11, 77.55s/ep] TrnAcc=1.000 ValAcc=0.806 TrnLoss=0.006 ValLoss=0.751
+  * 60%|####2  | 121/200 [2:29:04<1:34:25, 71.71s/ep] TrnAcc=0.999 ValAcc=0.828 TrnLoss=0.007 ValLoss=0.699 
+     terminal.pt          best_val_loss.pt         
+         TestAcc TestLoss          TestAcc TestLoss
+1          0.785    0.943            0.802    0.923
+2          0.770    1.048            0.760    1.039
+3          0.740    1.119            0.750    1.118
+4          0.835    0.608            0.830    0.634
+5          0.733    1.081            0.760    1.019
+mean       0.772    0.960            0.780    0.947
+std        0.041    0.207            0.034    0.188
+
+## 2024-05-28-12-58 ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask & Dropout
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.9
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
+* Early stopping (30)
+  * 52%|###6   | 105/200 [2:11:11<1:56:29, 73.58s/ep] TrnAcc=0.998 ValAcc=0.841 TrnLoss=0.016 ValLoss=0.724 
+  * 44%|###5    | 89/200 [1:54:28<2:20:58, 76.20s/ep] TrnAcc=0.994 ValAcc=0.831 TrnLoss=0.028 ValLoss=0.725 
+  * 48%|###8    | 95/200 [1:59:57<2:16:45, 78.15s/ep] TrnAcc=0.998 ValAcc=0.803 TrnLoss=0.015 ValLoss=0.751
+  * 52%|###6   | 105/200 [2:11:51<2:01:50, 76.95s/ep] TrnAcc=0.999 ValAcc=0.803 TrnLoss=0.010 ValLoss=0.759 
+  * 55%|###8   | 110/200 [2:17:37<1:52:05, 74.73s/ep] TrnAcc=0.999 ValAcc=0.869 TrnLoss=0.010 ValLoss=0.660
+     terminal.pt          best_val_loss.pt         
+         TestAcc TestLoss          TestAcc TestLoss
+1          0.752    1.146            0.807    0.837
+2          0.780    0.949            0.785    0.872
+3          0.760    1.044            0.765    1.022
+4          0.853    0.631            0.825    0.645
+5          0.772    1.086            0.752    1.053
+mean       0.783    0.971            0.787    0.886
+std        0.040    0.203            0.030    0.164
+
+## 2024-05-29-18-47 ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes) with reduced parameters for RandomNoise, FrequencyMask, TimeMask & Dropout
+* num_workers = 2
+* dropout_rate = 0.2
+* gamma = 0.9
+* optimizer = torch.optim.Adam(model.parameters(), lr=config.lr)
+* val size = 0.1
+* Early stopping (40)
+  * 44%|###5    | 88/200 [1:48:35<2:16:35, 73.17s/ep] TrnAcc=0.994 ValAcc=0.831 TrnLoss=0.029 ValLoss=0.766 
+  * 72%|#####  | 143/200 [3:05:20<1:16:08, 80.16s/ep] TrnAcc=0.999 ValAcc=0.850 TrnLoss=0.007 ValLoss=0.596
+  * 72%|#####  | 144/200 [3:12:25<1:09:48, 74.79s/ep] TrnAcc=1.000 ValAcc=0.844 TrnLoss=0.006 ValLoss=0.512 
+  * 86%|#######7 | 173/200 [3:43:31<36:35, 81.32s/ep] TrnAcc=1.000 ValAcc=0.856 TrnLoss=0.003 ValLoss=0.512
+  * 
+terminal.pt          best_val_loss.pt         
+         TestAcc TestLoss          TestAcc TestLoss
+1          0.795    0.908            0.785    0.887
+2          0.790    0.848            0.790    0.838
+3          0.787    0.960            0.815    0.876
+4          0.870    0.537            0.850    0.575
+5          0.782    1.040            0.772    1.035
+mean       0.805    0.859            0.802    0.842
+std        0.037    0.193            0.031    0.167

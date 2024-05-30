@@ -7,9 +7,9 @@ disable_bat_pbar = False#True
 # do not change this block
 n_classes = 50
 folds = 5
-test_folds = [5]
+test_folds = [1, 2, 3, 4, 5]
 # ratio to split off from training data
-val_size = .1  # could be changed
+val_size = 0  # could be changed
 
 model_constructor = "ResNet(block=ResidualBlock, layers=[2, 2, 2, 2], num_classes=config.n_classes)"    # ResNet18
 #model_constructor = "ResNet(block=ResidualBlock, layers=[3, 4, 6, 3], num_classes=config.n_classes)"   # ResNet34
